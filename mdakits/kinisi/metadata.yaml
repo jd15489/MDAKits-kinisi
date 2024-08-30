@@ -1,0 +1,140 @@
+# TEMPLATE MDAKit file
+# --------------------
+# 
+# Please replace ALL entries with appropriate content for YOUR MDAKit.
+# Below we use the placeholder GH_HOST_ACCOUNT for the GitHub account where
+# the source code repository is held, typically your username or the 
+# organization that you're part off.
+# MYPROJECT is the name of your project (the repository name and here
+# we assume that this is also the PyPi/conda package name) whereas 
+# MYPACKAGE is how you import it in python.
+#
+# See https://mdakits.mdanalysis.org/add.html for more information. 
+#
+#------------------------------------------------------------
+# Required entries
+#------------------------------------------------------------
+## str: name of the project (the respository name)
+project_name: kinisi
+
+## List(str): a link to the authors file (preferred) or a list of authors 
+authors:
+  - 'Andrew R. McCluskey'
+  - 'Alex G. Squires' 
+  - 'Josh Dunn'
+  - 'Benjamin J. Morgan'
+
+## List(str): a list of maintainers
+## Please note these _must_ be GitHub handles
+## The maintainers will be tagged in issues if their MDAKit is failing.
+maintainers:
+  - "Andrew R. McCluskey"
+  - 'Benjamin J. Morgan'
+
+## str: a free form description of the mdakit
+description:
+    kinisi is an open-source package focussed on accurately quantifying the uncertainty in atomic and molecular displacements, and using this to more completely understand diffusion in materials.
+
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - KEYWORD1
+  - KEYWORD2
+^|^ Drew ^|^
+
+## str: the license the mdakit falls under
+## See https://spdx.org/licenses/ for valid license specifiers
+license: 	MIT
+
+## str: the link to the project's code
+## Please note that this is not limited to GitHub! Can be Gitlab, etc..
+project_home: https://github.com/bjmorgan/kinisi
+
+## str: the link to the project's documentation
+documentation_home: https://kinisi.readthedocs.io
+
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: UserGuide + API
+^|^ Drew ^|^
+
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/bjmorgan/kinisi@master
+
+## str: the package name used to import the mdakit
+import_name: kinisi
+
+## str: a specification for the range of Python versions supported by this MDAKit
+python_requires: ">=3.9"
+
+## str: a specification for the range of MDAnalysis versions supported by this MDAKit
+mdanalysis_requires: ">=2.0.0"
+
+## List(str): a list of commands to use when attempting to run the MDAKit's tests
+## If you package your tests inside your package then you can typically use the 
+##     pytest --pyargs MYPACKAGE
+## command as shown below. 
+## Otherwise you need to include commands to make the tests available. 
+## For example, if the tests are in the repository at the top level under `./tests`:
+## First use `git clone latest` to either clone the top commit for "development code" checks or check out
+## the latest tag for "latest release" checks. Then then run pytest:
+##    - git clone latest
+##    - pytest -v ./tests
+## Feel free to ask for advice on your pull request!
+run_tests:
+  - pytest ./kinisi/tests
+
+## List(str): a list of commands to use to install the necessary dependencies required
+## to run the MDAKit's tests.
+## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
+## make sure that it is appropriate for how you run tests.
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+^|^ Drew ^|^
+
+## str: the organisation name the MDAKit falls under
+project_org: GH_HOST_ACCOUNT
+^|^ Drew ^|^
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using mamba where possible (e.g.
+##   mamba -c conda-forge install MYPROJECT
+## for a conda package installation).
+## Here we use a simple PyPi installation:
+install:
+  - pip install kinisi
+
+## str: the development status of the MDAKit
+## See https://pypi.org/classifiers/ for development status classifiers.
+development_status: Production/Stable
+
+## List(str) a list of publications to cite when using the MDAKit
+## Links to scientific publications or stable URLs (typically of the form
+## https://doi.org/<DOI> or to a preprint server)
+publications:
+  - https://doi.org/10.1021/acs.chemmater.0c03738
+  - https://doi.org/10.1039/D1TA07631K
+  - https://discovery.ucl.ac.uk/id/eprint/10145692/
+  - https://doi.org/10.1002/jcc.27090
+  - https://doi.org/10.1021/acs.chemmater.3c01271
+  - https://doi.org/10.1063/5.0188081
+  - https://doi.org/10.1038/s41563-024-01873-5
+  - https://doi.org/10.1002/cey2.564
+  - https://doi.org/10.1039/D4CY00506F
+  - https://doi.org/10.26434/chemrxiv-2024-3s0kh
+  - https://arxiv.org/abs/2305.18244
+  - https://arxiv.org/abs/2310.06149
+  - https://arxiv.org/abs/2403.20138
+^|^ Drew ^|^
+
+## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
+community_home: URL
+^|^ Drew ^|^
+
+## str: a link to the MDAKit's changelog
+changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
+^|^ Drew ^|^
